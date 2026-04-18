@@ -78,12 +78,17 @@
       }
     }
 
-    .demo-pair video {
+    .video-wrapper {
+      position: relative;
+    }
+
+    .video-wrapper video {
       width: 100%;
       border-radius: 8px;
       aspect-ratio: 16 / 9;
       object-fit: contain;
       background: #000;
+      display: block;
     }
 
     .demo-label {
@@ -293,30 +298,38 @@
       <div class="demo-pair" style="margin-bottom: 2rem;">
         <div>
           <p class="demo-label">TUM RGB-D &mdash; fr1/desk</p>
-          <video controls loop muted playsinline>
-            <source src="./src_video/demo_fr1.mp4" type="video/mp4">
-          </video>
+          <div class="video-wrapper">
+            <video controls loop muted playsinline>
+              <source src="./src_video/demo_fr1_labeled.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
         <div>
           <p class="demo-label">EuRoC &mdash; V101</p>
-          <video controls loop muted playsinline>
-            <source src="./src_video/demo_V101.mp4" type="video/mp4">
-          </video>
+          <div class="video-wrapper">
+            <video controls loop muted playsinline>
+              <source src="./src_video/demo_V101_labeled.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
 
       <div class="demo-pair">
         <div>
           <p class="demo-label">EuRoC &mdash; MH03</p>
-          <video controls loop muted playsinline>
-            <source src="./src_video/demo_MH03.mp4" type="video/mp4">
-          </video>
+          <div class="video-wrapper">
+            <video controls loop muted playsinline>
+              <source src="./src_video/demo_MH03_labeled.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
         <div>
           <p class="demo-label">EuRoC &mdash; MH05</p>
-          <video controls loop muted playsinline>
-            <source src="./src_video/demo_MH05_2.mp4" type="video/mp4">
-          </video>
+          <div class="video-wrapper">
+            <video controls loop muted playsinline>
+              <source src="./src_video/demo_MH05_2_labeled.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
