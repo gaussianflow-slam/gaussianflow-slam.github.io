@@ -261,19 +261,19 @@
           <h2 class="title is-3 has-text-centered">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              Gaussian splatting has recently gained traction as a compelling image representation for SLAM systems,
+              Gaussian splatting has recently gained traction as a compelling map representation for SLAM systems,
               enabling dense and photo-realistic scene modeling. However, its application to monocular SLAM remains
-              challenging due to the lack of reliable geometric cues from a single camera. Without explicit supervision,
-              mapping or tracking could fall in local-minima, resulting in structure-degenerate and inaccurate 3DGS.
+              challenging due to the lack of reliable geometric cues from monocular input. Without geometric
+              supervision, mapping or tracking could fall in local-minima, resulting in structural degeneracies and
+              inaccuracies.
             </p>
             <p>
-              To address this challenge, we propose <strong>GaussianFlow SLAM</strong>, a monocular 3DGS SLAM that
-              leverages optical flow as a geometry-aware cue to guide the optimization of both the projected scene
-              structure and camera poses. By encouraging the projected motion of each Gaussian, termed
-              <em>GaussianFlow</em>, to align with the optical flow, our method introduces consistent structure cues for
-              iterative 3DGS map reconstruction and pose estimation. Furthermore, we introduce normalized error-based
-              densification and pruning modules that refine inactive and unstable Gaussians, thereby contributing to
-              improving map quality and pose accuracy.
+              To address this challenge, we propose <strong>GaussianFlow SLAM</strong>, a monocular 3DGS-SLAM that
+              leverages optical flow as a geometry-aware cue to guide the optimization of both the scene structure and
+              camera poses. By encouraging the projected motion of Gaussians, termed <em>GaussianFlow</em>, to align with the
+              optical flow, our method introduces consistent structural cues to regularize both map reconstruction and
+              pose estimation. Furthermore, we introduce normalized error-based densification and pruning modules to
+              refine inactive and unstable Gaussians, thereby contributing to improved map quality and pose accuracy.
             </p>
             <p>
               Experiments conducted on public datasets demonstrate that our method achieves superior rendering quality
