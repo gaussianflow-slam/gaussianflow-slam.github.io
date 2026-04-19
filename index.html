@@ -290,6 +290,45 @@
     </div>
   </section>
 
+  <!-- ======== METHOD ======== -->
+  <section class="section is-small" id="method" style="background: #f9f9f9;">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column">
+          <h2 class="title is-3 has-text-centered">Method</h2>
+          <figure class="image method-figure" style="margin-bottom: 1.5rem;">
+            <img src="./static/images/framework.png" alt="GaussianFlow SLAM overall framework">
+          </figure>
+          <div class="content has-text-justified">
+            <p>
+              <strong>GaussianFlow SLAM</strong> is a monocular 3D Gaussian Splatting SLAM framework that uses
+              dense optical flow as a geometry-aware cue for optimizing the 3DGS map and camera poses.
+              Given incoming monocular images, the system alternates between tracking and
+              mapping while maintaining a shared 3DGS map.
+              By aligning GaussianFlow with dense optical flow, the system provides structural
+              supervision even without depth measurements. This allows the Gaussians to move toward
+              geometrically consistent positions while also providing feedback for pose estimation.
+            </p>
+            <p>
+              Our pipeline consists of three recurrent optimization modules: initial pose optimization,
+              GaussianFlow-guided dense bundle adjustment, and multi-view Gaussian optimization.
+              In each recurrent update, GaussianFlow rendered from the current 3DGS map is fed into a
+              ConvGRU-based optical flow module, which predicts refined optical flow. The resulting flow is
+              then used by optimization kernels to update either the camera poses or the 3DGS map.
+              The optical flow and GaussianFlow progressively converge toward geometrically consistent correspondences.
+            </p>
+            <p>
+              To further improve map quality, we introduce normalized error-based densification and pruning.
+              These modules selectively split under-reconstructed Gaussians and remove unstable floaters
+              using per-Gaussian errors. This helps produce more accurate geometry, cleaner reconstructions,
+              and better pose estimation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ======== DEMO VIDEOS ======== -->
   <section class="section" id="demo">
     <div class="container is-max-desktop">
@@ -297,18 +336,18 @@
 
       <div class="demo-pair" style="margin-bottom: 2rem;">
         <div>
-          <p class="demo-label">TUM RGB-D &mdash; fr1/desk</p>
+          <p class="demo-label">EuRoC &mdash; MH01</p>
           <div class="video-wrapper">
             <video controls loop muted playsinline>
-              <source src="./src_video/demo_fr1_labeled.mp4" type="video/mp4">
+              <source src="./src_video/MH01_camera_labeled.mp4" type="video/mp4">
             </video>
           </div>
         </div>
         <div>
-          <p class="demo-label">EuRoC &mdash; V101</p>
+          <p class="demo-label">TUM RGB-D &mdash; fr1/desk</p>
           <div class="video-wrapper">
             <video controls loop muted playsinline>
-              <source src="./src_video/demo_V101_labeled.mp4" type="video/mp4">
+              <source src="./src_video/fr1_camera_labeled.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -316,10 +355,10 @@
 
       <div class="demo-pair">
         <div>
-          <p class="demo-label">EuRoC &mdash; MH03</p>
+          <p class="demo-label">EuRoC &mdash; V101</p>
           <div class="video-wrapper">
             <video controls loop muted playsinline>
-              <source src="./src_video/demo_MH03_labeled.mp4" type="video/mp4">
+              <source src="./src_video/demo_V101_labeled.mp4" type="video/mp4">
             </video>
           </div>
         </div>

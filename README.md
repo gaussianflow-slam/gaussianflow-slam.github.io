@@ -1,3 +1,3 @@
-# AIM-SLAM
+# GaussianFlow SLAM
 
-Project page source code for ABCD
+Project page
